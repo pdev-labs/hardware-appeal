@@ -37,10 +37,7 @@ _{{NOT_ASKING}}_
 
 ## What I give back
 
-1. **A public build log** — what shipped each week and what broke, on the actual hardware.
-2. **A written Linux compatibility report** — what worked, what needed a quirk, what I would tell the next buyer. Published with attribution, unedited.
-3. **Upstream fixes** — driver quirks, packaging bugs and kernel problems become patches and bug reports.
-4. **It stays in circulation** — if it is replaced later, it goes to another maintainer, not a drawer.
+{{OFFERS_MD}}
 
 ## Scope
 

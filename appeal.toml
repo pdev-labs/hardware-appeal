@@ -41,6 +41,27 @@ not_asking = "Not asking for the newest or the fastest. Refurbished, previous-ge
 situation  = "My only machine died in November 2026. I ship everything from a phone, and that ceiling is now the bottleneck on four active repos."
 what_i_do  = "I am 16. Solo maintainer: I write Linux-on-Android tooling, Rust clients, ESP32 firmware and Python packaging. Everything is public, and every release is built by CI I wrote."
 
+# What the donor gets. Rendered as section 04 of the page.
+[[offers]]
+title = "Named credit in the repositories"
+text  = "Whoever provides the machine is credited by name in the README of every repository it unblocks, and at the top of the build log. Not a temporary banner that quietly disappears — it stays there."
+
+[[offers]]
+title = "A public build log"
+text  = "What shipped each week, what broke, and how long each build took — on the actual hardware."
+
+[[offers]]
+title = "A written Linux compatibility report"
+text  = "What worked out of the box, what needed a quirk, and what I would tell the next person who buys it. Published in full, with attribution, and nobody gets to edit it first."
+
+[[offers]]
+title = "Upstream fixes"
+text  = "Every driver quirk, packaging bug and kernel problem I hit turns into a patch or a bug report rather than a tweet."
+
+[[offers]]
+title = "It stays in circulation"
+text  = "If the machine is replaced later, it goes to another maintainer, not into a drawer."
+
 [outreach]
 from_name   = "pdev-labs"
 from_email  = "pdev.labs@gmail.com"   # normally identical to identity.email

@@ -47,10 +47,11 @@ _Not asking for the newest or the fastest. Refurbished, previous-generation, or 
 
 ## What I give back
 
-1. **A public build log** — what shipped each week and what broke, on the actual hardware.
-2. **A written Linux compatibility report** — what worked, what needed a quirk, what I would tell the next buyer. Published with attribution, unedited.
-3. **Upstream fixes** — driver quirks, packaging bugs and kernel problems become patches and bug reports.
-4. **It stays in circulation** — if it is replaced later, it goes to another maintainer, not a drawer.
+1. **Named credit in the repositories.** Whoever provides the machine is credited by name in the README of every repository it unblocks, and at the top of the build log. Not a temporary banner that quietly disappears — it stays there.
+2. **A public build log.** What shipped each week, what broke, and how long each build took — on the actual hardware.
+3. **A written Linux compatibility report.** What worked out of the box, what needed a quirk, and what I would tell the next person who buys it. Published in full, with attribution, and nobody gets to edit it first.
+4. **Upstream fixes.** Every driver quirk, packaging bug and kernel problem I hit turns into a patch or a bug report rather than a tweet.
+5. **It stays in circulation.** If the machine is replaced later, it goes to another maintainer, not into a drawer.
 
 ## Scope
 

@@ -81,6 +81,19 @@ def bullets(items: list[str], cls: str) -> str:
     return "\n".join(f'      <li class="{cls}">{esc(i)}</li>' for i in items)
 
 
+def offers_html(cfg: dict) -> str:
+    return "\n".join(
+        f'      <li><strong>{esc(o["title"])}.</strong> {esc(o["text"])}</li>'
+        for o in cfg["offers"]
+    )
+
+
+def offers_md(cfg: dict) -> str:
+    return "\n".join(
+        f'{i}. **{o["title"]}.** {o["text"]}' for i, o in enumerate(cfg["offers"], 1)
+    )
+
+
 def md_bullets(items: list[str]) -> str:
     return "\n".join(f"- {i}" for i in items)
 
@@ -115,6 +128,8 @@ def main() -> None:
         "NICE_ITEMS_MD": md_bullets(hw["wanted"]["nice_to_have"]),
         "EVIDENCE": evidence_rows(evidence),
         "EVIDENCE_MD": evidence_md(evidence),
+        "OFFERS": offers_html(cfg),
+        "OFFERS_MD": offers_md(cfg),
         "PUBLIC_REPOS": str(evidence["public_repos"]),
         "STARS": str(sum(r["stars"] for r in evidence["repos"])),
         "UPDATED": today,
