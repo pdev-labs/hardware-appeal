@@ -19,7 +19,7 @@ My only machine, a **Dell Latitude E5440** from **2014**, died. This repo is the
 
 ## What I do with a machine
 
-Solo maintainer. I write Linux-on-Android tooling, Rust clients, ESP32 firmware and Python packaging. Everything is public, and every release is built by CI I wrote. There are 30 public repositories of my own on the profile. These are the ones a working machine unblocks:
+I am 16. Solo maintainer: I write Linux-on-Android tooling, Rust clients, ESP32 firmware and Python packaging. Everything is public, and every release is built by CI I wrote. There are 30 public repositories of my own on the profile. These are the ones a working machine unblocks:
 
 - **[Linux-For-Android](https://github.com/pdev-labs/Linux-For-Android)** — Runs a real Linux desktop (Ubuntu, Debian, Kali, Arch, Fedora, openSUSE, Void, Alpine) on Android through Termux, with no root. Verified across Android 5.1 to 16. _(Shell · 5 stars)_
 - **[pocketdesk](https://github.com/pdev-labs/pocketdesk)** — Streams a Linux desktop to a phone and drives it remotely. Rust host, native Android client, built end to end in GitHub Actions. _(Rust)_
