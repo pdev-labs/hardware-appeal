@@ -22,20 +22,24 @@ python3 build.py
 That writes `README.md` and `docs/index.html`. Both are generated — edit
 `appeal.toml` and `src/`, never the output.
 
-## 3. Publish
+## 3. Publish — done
+
+The repo is live at **https://github.com/pdev-labs/hardware-appeal**, Pages is
+serving `docs/` from `main`, and the page resolves at:
+
+**https://pdev-labs.github.io/hardware-appeal/**
+
+To rebuild after an edit to `appeal.toml` or `src/`:
 
 ```bash
-git init -b main
-git add -A
-git commit -m "hardware request: case file and outreach pipeline"
-git remote add origin git@github.com:pdev-labs/hardware-appeal.git
-git push -u origin main
+python3 build.py
+git add -A && git commit -m "rebuild page" && git push
 ```
 
-Then, on GitHub: **Settings → Pages → Source: Deploy from a branch → main / docs**.
-
-Live at `https://pdev-labs.github.io/hardware-appeal/`. Check the URL resolves
-before you send any email — every message points at it.
+Pages redeploys itself. Commits must use the GitHub noreply address
+(`300827144+pdev-labs@users.noreply.github.com`) — the account blocks pushes
+that expose a real email, and the push will be rejected otherwise. It is
+already set in `.git/config`.
 
 ## 4. Enrol in Sponsors first
 
