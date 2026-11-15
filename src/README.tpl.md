@@ -35,6 +35,10 @@ My only machine, a **{{DEAD_MACHINE}}** from **{{DEAD_YEAR}}**, died. This repo 
 
 _{{NOT_ASKING}}_
 
+## How this is being built right now
+
+{{WORKAROUND_MD}}
+
 ## What I give back
 
 {{OFFERS_MD}}

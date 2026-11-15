@@ -45,6 +45,10 @@ I am 16. Solo maintainer: I write Linux-on-Android tooling, Rust clients, ESP32 
 
 _Not asking for the newest or the fastest. Refurbished, previous-generation, or review-unit hardware all do the job._
 
+## How this is being built right now
+
+Nothing above was built on a laptop. The desktop comes from [Linux-For-Android](https://github.com/pdev-labs/Linux-For-Android), a full Linux environment running on Android with no root. When something needs a real GUI session, it runs inside a GitHub Actions runner provisioned by [Free-Github-Actions-RDP](https://github.com/pdev-labs/Free-Github-Actions-RDP-for-App-Testing). Both are my own projects, so the workaround is part of the portfolio rather than an excuse.
+
 ## What I give back
 
 1. **Named credit in the repositories.** Whoever provides the machine is credited by name in the README of every repository it unblocks, and at the top of the build log. Not a temporary banner that quietly disappears — it stays there.

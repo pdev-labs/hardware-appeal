@@ -184,6 +184,16 @@
     max-width: 38rem;
   }
 
+  /* ---------- workaround note ---------- */
+  .now {
+    margin-top: 2rem;
+    padding: .15rem 0 .15rem 1.15rem;
+    border-left: 2px solid var(--accent);
+  }
+  .now h3 { margin-bottom: .45rem; }
+  .now p { margin: 0; font-size: .9375rem; line-height: 1.6; color: var(--ink2); max-width: 38rem; }
+  .now a { color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+
   /* ---------- needs ---------- */
   .needs {
     display: grid;
@@ -385,6 +395,12 @@
         <p>A small programming language written in Python with Hinglish keywords: a CLI, worked examples, tests and a VS Code extension, under the GPL.</p>
       </li>
     </ul>
+
+    <div class="now">
+      <h3>How this is being built right now</h3>
+      <p>Nothing above was built on a laptop. The desktop comes from <a href="https://github.com/pdev-labs/Linux-For-Android">Linux-For-Android</a>, a full Linux environment running on Android with no root. When something needs a real GUI session, it runs inside a GitHub Actions runner provisioned by <a href="https://github.com/pdev-labs/Free-Github-Actions-RDP-for-App-Testing">Free-Github-Actions-RDP</a>. Both are my own projects, so the workaround is part of the portfolio rather than an excuse.</p>
+    </div>
+
     <p class="aside">Figures pulled from the public GitHub API on 2026-11-15. Verify them independently: <a href="https://github.com/pdev-labs">https://github.com/pdev-labs</a></p>
   </section>
 

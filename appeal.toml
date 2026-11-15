@@ -40,6 +40,7 @@ not_asking = "Not asking for the newest or the fastest. Refurbished, previous-ge
 # Honest framing. This is not a sob story and the page does not pretend it is.
 situation  = "My only machine died in November 2026. I ship everything from a phone, and that ceiling is now the bottleneck on four active repos."
 what_i_do  = "I am 16. Solo maintainer: I write Linux-on-Android tooling, Rust clients, ESP32 firmware and Python packaging. Everything is public, and every release is built by CI I wrote."
+workaround = "Nothing above was built on a laptop. The desktop comes from [Linux-For-Android](https://github.com/pdev-labs/Linux-For-Android), a full Linux environment running on Android with no root. When something needs a real GUI session, it runs inside a GitHub Actions runner provisioned by [Free-Github-Actions-RDP](https://github.com/pdev-labs/Free-Github-Actions-RDP-for-App-Testing). Both are my own projects, so the workaround is part of the portfolio rather than an excuse."
 
 # What the donor gets. Rendered as section 04 of the page.
 [[offers]]

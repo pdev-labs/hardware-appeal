@@ -13,6 +13,7 @@ import datetime as dt
 import html
 import json
 import pathlib
+import re
 import sys
 import tomllib
 
@@ -49,6 +50,21 @@ def check(cfg: dict) -> None:
 
 def esc(s: str) -> str:
     return html.escape(str(s), quote=True)
+
+
+LINK = re.compile(r"\[([^\]]+)\]\((https?://[^\s)]+)\)")
+
+
+def esc_links(text: str) -> str:
+    """Escape, then turn [label](url) into an anchor.
+
+    Lets appeal.toml carry links without allowing arbitrary HTML through.
+    """
+    out = html.escape(str(text), quote=True)
+    return LINK.sub(
+        lambda m: f'<a href="{m.group(2)}">{m.group(1)}</a>',
+        out,
+    )
 
 
 def evidence_rows(evidence: dict) -> str:
@@ -118,6 +134,8 @@ def main() -> None:
         "LOCATION": ident.get("location") or "",
         "SITUATION": esc(ctx["situation"]),
         "WHAT_I_DO": esc(ctx["what_i_do"]),
+        "WORKAROUND": esc_links(ctx.get("workaround", "")),
+        "WORKAROUND_MD": ctx.get("workaround", ""),
         "DEAD_MACHINE": esc(hw["dead_machine"]),
         "DEAD_YEAR": str(hw["dead_year"]),
         "DEAD_NOTE": esc(hw["dead_note"]),
