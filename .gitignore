@@ -1,0 +1,13 @@
+# generated at the wrong time, or by accident
+state/
+outbox/
+
+# secrets never belong in here
+.env
+*.env
+credentials*
+*.key
+
+# python
+__pycache__/
+*.pyc

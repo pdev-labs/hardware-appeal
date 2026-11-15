@@ -1,0 +1,51 @@
+# ============================================================
+#  Single source of truth for the appeal page, the README,
+#  and every outreach message.
+#  Edit this file, then run:  python3 build.py
+# ============================================================
+
+[identity]
+handle        = "pdev-labs"
+profile       = "https://github.com/pdev-labs"
+display_name  = "pdev-labs"
+# ---- FILL THIS IN -------------------------------------------------
+# Leave as-is and build.py will refuse to generate a public page
+# with a placeholder address in it.
+email         = "pdevlabs@gmail.com"
+# Optional. Leave "" to omit the line entirely.
+location      = ""
+# -------------------------------------------------------------------
+
+[hardware]
+dead_machine  = "Dell Latitude E5440"
+dead_year     = 2014
+dead_note     = "4th-gen Core i5, DDR3, spinning disk. Motherboard is gone. Nothing recoverable."
+
+# What would actually unblock the work. Keep it modest and true.
+[hardware.wanted]
+minimum = [
+  "x86-64, 4 cores or better",
+  "16 GB RAM (8 GB is workable, 16 GB removes the ceiling)",
+  "NVMe SSD, 256 GB or larger",
+  "Runs Linux with no out-of-tree driver fights",
+]
+nice_to_have = [
+  "32 GB RAM (local Android emulator + Rust release builds at the same time)",
+  "USB-C with DisplayPort alt mode",
+  "User-replaceable battery and SSD",
+]
+not_asking = "Not asking for the newest or the fastest. Refurbished, previous-generation, or review-unit hardware all do the job."
+
+[context]
+# Honest framing. This is not a sob story and the page does not pretend it is.
+situation  = "My only machine died in November 2026. I ship everything from a phone, and that ceiling is now the bottleneck on four active repos."
+what_i_do  = "Solo maintainer. I write Linux-on-Android tooling, Rust clients, ESP32 firmware and Python packaging. Everything is public, and every release is built by CI I wrote."
+
+[outreach]
+from_name   = "pdev-labs"
+from_email  = "pdevlabs@gmail.com"   # normally identical to identity.email
+reply_to    = "pdevlabs@gmail.com"
+daily_cap   = 5                 # hard ceiling, enforced by send.py
+min_gap_min = 20                # minutes between two sends, enforced
+smtp_host   = "smtp.gmail.com"
+smtp_port   = 587

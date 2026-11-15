@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{HANDLE}} — hardware request</title>
+<meta name="description" content="A working machine, requested once, with evidence. {{DEAD_MACHINE}} ({{DEAD_YEAR}}) is dead.">
+<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131311" media="(prefers-color-scheme: dark)">
+<style>
+  :root {
+    --paper: #f6f3ec;
+    --ink: #15140f;
+    --ink2: #3d3b32;
+    --muted: #6a675c;
+    --rule: rgba(21, 20, 15, .16);
+    --rule-strong: rgba(21, 20, 15, .45);
+    --accent: #7c2a1e;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131311;
+      --ink: #ece8dd;
+      --ink2: #c3bfb2;
+      --muted: #959185;
+      --rule: rgba(236, 232, 221, .16);
+      --rule-strong: rgba(236, 232, 221, .45);
+      --accent: #d98a6a;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+  }
+
+  a { color: inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--rule-strong);
+    font-family: var(--mono);
+    font-size: .6875rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .masthead b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- title ---------- */
+  h1 {
+    margin: 2.75rem 0 0;
+    font-size: clamp(1.95rem, 5.4vw, 2.9rem);
+    line-height: 1.06;
+    letter-spacing: -.022em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .lede {
+    margin: 1.5rem 0 0;
+    font-size: 1.0625rem;
+    color: var(--ink2);
+    max-width: 38rem;
+  }
+
+  .stamp {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: .42rem .72rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: .625rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    transform: rotate(-1.4deg);
+  }
+
+  /* ---------- sections ---------- */
+  section { margin-top: 3.75rem; }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin: 0;
+    font-family: var(--mono);
+    font-size: .6875rem;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  h2 .num { color: var(--accent); }
+  h2 .fill { flex: 1; height: 1px; background: var(--rule); }
+
+  h3 {
+    margin: 0 0 .65rem;
+    font-family: var(--mono);
+    font-size: .6875rem;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  p { margin: 1.1rem 0 0; }
+  section > p:first-of-type { margin-top: 1.5rem; }
+
+  /* ---------- spec list ---------- */
+  .spec {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: .55rem 1.25rem;
+    margin: 1.75rem 0 0;
+    font-family: var(--mono);
+    font-size: .8125rem;
+    line-height: 1.55;
+  }
+  .spec dt {
+    color: var(--muted);
+    font-size: .6875rem;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    padding-top: .1rem;
+  }
+  .spec dd { margin: 0; }
+  .dead { color: var(--accent); }
+
+  /* ---------- repos ---------- */
+  .repos { list-style: none; margin: 1.6rem 0 0; padding: 0; }
+  .repo { border-top: 1px solid var(--rule); padding: .95rem 0; }
+  .repo:first-child { border-top: 1px solid var(--rule-strong); }
+  .repo-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .repo-head a {
+    font-family: var(--mono);
+    font-size: .875rem;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+  }
+  .repo-head a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+  .repo-meta {
+    font-family: var(--mono);
+    font-size: .6875rem;
+    letter-spacing: .04em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .repo p {
+    margin: .25rem 0 0;
+    font-size: .9375rem;
+    line-height: 1.55;
+    color: var(--ink2);
+    max-width: 38rem;
+  }
+
+  /* ---------- needs ---------- */
+  .needs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.75rem;
+  }
+  @media (max-width: 34rem) { .needs { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+  ul.list { list-style: none; margin: 0; padding: 0; }
+  ul.list li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin: .45rem 0;
+    font-size: .9375rem;
+    line-height: 1.5;
+  }
+  ul.list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .66em;
+    width: .45rem;
+    height: 1px;
+    background: var(--accent);
+  }
+  .nice li::before { background: var(--rule-strong); }
+
+  .aside {
+    margin-top: 1.75rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--rule);
+    font-size: .9375rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ---------- offers ---------- */
+  ol.offers {
+    counter-reset: o;
+    list-style: none;
+    margin: 1.7rem 0 0;
+    padding: 0;
+  }
+  ol.offers li {
+    counter-increment: o;
+    position: relative;
+    padding: .9rem 0 .9rem 2.6rem;
+    border-top: 1px solid var(--rule);
+    font-size: .9375rem;
+    line-height: 1.55;
+  }
+  ol.offers li:first-child { border-top: 1px solid var(--rule-strong); }
+  ol.offers li::before {
+    content: counter(o, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    font-family: var(--mono);
+    font-size: .6875rem;
+    letter-spacing: .06em;
+    color: var(--accent);
+  }
+  ol.offers strong { font-weight: 600; }
+
+  /* ---------- contact ---------- */
+  .contact {
+    margin-top: 2rem;
+    padding: 1.6rem;
+    border: 1px solid var(--rule-strong);
+  }
+  .contact .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: .35rem 0;
+  }
+  .contact .row + .row { border-top: 1px solid var(--rule); }
+  .contact .label {
+    font-family: var(--mono);
+    font-size: .625rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .contact a {
+    font-family: var(--mono);
+    font-size: .9375rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .contact a:hover { color: var(--ink); }
+
+  footer {
+    margin-top: 4.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule-strong);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: .625rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  footer a { text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
+
+  @media (max-width: 30rem) {
+    body { font-size: 17px; }
+    .spec { grid-template-columns: 1fr; gap: .15rem 0; }
+    .spec dd { margin-bottom: .7rem; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .wrap { max-width: none; padding: 0; }
+    .stamp { color: #000; border-color: #000; transform: none; }
+    a { text-decoration: none; }
+    section { break-inside: avoid; }
+    footer { margin-top: 2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <span><b>Case file</b> &nbsp;·&nbsp; 001</span>
+    <span>Updated {{UPDATED}}</span>
+  </header>
+
+  <h1>My only machine died. I need a working one to keep shipping.</h1>
+
+  <p class="lede">{{SITUATION}}</p>
+
+  <div class="stamp">Open — hardware requested</div>
+
+  <section>
+    <h2><span class="num">01</span> What broke <span class="fill"></span></h2>
+    <dl class="spec">
+      <dt>Machine</dt><dd>{{DEAD_MACHINE}}</dd>
+      <dt>Built</dt><dd>{{DEAD_YEAR}}</dd>
+      <dt>Status</dt><dd class="dead">Dead — board failure</dd>
+      <dt>Detail</dt><dd>{{DEAD_NOTE}}</dd>
+    </dl>
+    <p class="aside">Not a damaged keyboard or a dead cell. The machine itself is gone, and it was already a decade past the point where a current toolchain would run on it comfortably.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span> What I do with a machine <span class="fill"></span></h2>
+    <p>{{WHAT_I_DO}} {{PUBLIC_REPOS}} public repositories of my own, all readable, none of them private. The six below are the ones a machine actually unblocks.</p>
+    <ul class="repos">
+{{EVIDENCE}}
+    </ul>
+    <p class="aside">Figures pulled from the public GitHub API on {{UPDATED}}. Verify them independently: <a href="{{PROFILE}}">{{PROFILE}}</a></p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span> What would actually fix it <span class="fill"></span></h2>
+    <div class="needs">
+      <div>
+        <h3>Minimum</h3>
+        <ul class="list">
+{{MIN_ITEMS}}
+        </ul>
+      </div>
+      <div>
+        <h3>Helpful</h3>
+        <ul class="list nice">
+{{NICE_ITEMS}}
+        </ul>
+      </div>
+    </div>
+    <p class="aside">{{NOT_ASKING}}</p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span> What I give back <span class="fill"></span></h2>
+    <ol class="offers">
+      <li><strong>A public build log.</strong> What shipped each week, what broke, and how long each build took — on the actual hardware.</li>
+      <li><strong>A written Linux compatibility report.</strong> What worked out of the box, what needed a quirk, and what I would tell the next person who buys it. Published in full, with attribution, and nobody gets to edit it first.</li>
+      <li><strong>Upstream fixes.</strong> Every driver quirk, packaging bug and kernel problem I hit turns into a patch or a bug report rather than a tweet.</li>
+      <li><strong>It stays in circulation.</strong> If the machine is replaced later, it goes to another maintainer, not into a drawer.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span> How to reach me <span class="fill"></span></h2>
+    <div class="contact">
+      <div class="row">
+        <span class="label">Email</span>
+        <a href="mailto:{{EMAIL}}">{{EMAIL_HTML}}</a>
+      </div>
+      <div class="row">
+        <span class="label">GitHub</span>
+        <a href="{{PROFILE}}">github.com/{{HANDLE}}</a>
+      </div>
+    </div>
+    <p class="aside">This page is the entire ask. It is not a mailing list and there is no form behind it. If someone sent you this link, it was one message, sent once, to one address.</p>
+  </section>
+
+  <footer>
+    <span>{{HANDLE}} · hardware request</span>
+    <span><a href="{{PROFILE}}">github.com/{{HANDLE}}</a> &nbsp;·&nbsp; {{UPDATED}}</span>
+  </footer>
+
+</div>
+</body>
+</html>

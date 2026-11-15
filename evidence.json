@@ -1,0 +1,50 @@
+{
+  "generated": "2026-11-15",
+  "handle": "pdev-labs",
+  "public_repos": 30,
+  "note": "Refresh with: python3 sync_evidence.py",
+  "repos": [
+    {
+      "name": "Linux-For-Android",
+      "url": "https://github.com/pdev-labs/Linux-For-Android",
+      "lang": "Shell",
+      "stars": 5,
+      "blurb": "Runs a real Linux desktop (Ubuntu, Debian, Kali, Arch, Fedora, openSUSE, Void, Alpine) on Android through Termux, with no root. Verified across Android 5.1 to 16."
+    },
+    {
+      "name": "pocketdesk",
+      "url": "https://github.com/pdev-labs/pocketdesk",
+      "lang": "Rust",
+      "stars": 0,
+      "blurb": "Streams a Linux desktop to a phone and drives it remotely. Rust host, native Android client, built end to end in GitHub Actions."
+    },
+    {
+      "name": "linux-on-esp32",
+      "url": "https://github.com/pdev-labs/linux-on-esp32",
+      "lang": "C",
+      "stars": 0,
+      "blurb": "A NOMMU Linux environment for the ESP32-S3 microcontroller, with Wi-Fi and I2C support."
+    },
+    {
+      "name": "NanoNAS-S3",
+      "url": "https://github.com/pdev-labs/NanoNAS-S3",
+      "lang": "C++",
+      "stars": 0,
+      "blurb": "ESP32-S3 network storage with a Material UI, chunked background copies and fast SDMMC I/O."
+    },
+    {
+      "name": "FluxMedia",
+      "url": "https://github.com/pdev-labs/FluxMedia",
+      "lang": "Python",
+      "stars": 1,
+      "blurb": "Published Python module and PyPI package: a LAN QR share portal plus a media player. Shipped with AUR, deb and rpm packages."
+    },
+    {
+      "name": "pdev",
+      "url": "https://github.com/pdev-labs/pdev",
+      "lang": "Python",
+      "stars": 0,
+      "blurb": "A small programming language written in Python with Hinglish keywords: a CLI, worked examples, tests and a VS Code extension, under the GPL."
+    }
+  ]
+}

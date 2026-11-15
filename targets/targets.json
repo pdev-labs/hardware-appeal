@@ -1,0 +1,94 @@
+{
+  "_readme": "Every entry must have a 'verified' date and a 'hook' sentence unique to that org. render.py refuses anything else. The hook is quoted verbatim after 'because' in the email, so write it in the first person and make it true. See targets/README.md before adding.",
+
+  "targets": [
+    {
+      "slug": "human-i-t",
+      "org": "Human-I-T",
+      "kind": "form",
+      "route": "https://www.human-i-t.org/free-laptop-free-internet-request",
+      "audience": "individual",
+      "fit": "high",
+      "verified": "2026-11-15",
+      "hook": "your programme takes individual requests directly, without routing people through a school or a nonprofit first",
+      "notes": "Web form, not email. Paste the rendered brief into the free-text field."
+    },
+    {
+      "slug": "computers-with-causes",
+      "org": "Computers with Causes",
+      "kind": "form",
+      "route": "https://www.computerswithcauses.org/application",
+      "audience": "individual",
+      "fit": "high",
+      "verified": "2026-11-15",
+      "hook": "you review individual applications on evidence rather than requiring a referral, and a public repo history is exactly that",
+      "notes": "Application is by mail or PDF only. Download the individual/family form and send it; do not email."
+    },
+    {
+      "slug": "we-care-act",
+      "org": "We Care Act NYC — Computer Assistance Program",
+      "kind": "program",
+      "route": "https://wecareactnyc.org",
+      "audience": "individual",
+      "fit": "high",
+      "verified": "2026-11-15",
+      "hook": "your programme accepts individual applicants nationwide instead of only organisations",
+      "notes": "Confirm the current intake route on their site before applying."
+    },
+    {
+      "slug": "pcs-for-people",
+      "org": "PCs for People",
+      "kind": "program",
+      "route": "https://www.pcsforpeople.org/",
+      "audience": "individual",
+      "fit": "medium",
+      "verified": "2026-11-15",
+      "hook": "your refurbished machines are the fallback I can actually afford if a donated one never arrives",
+      "notes": "Income eligibility applies. This is a low-cost purchase path, not a gift — read the rules before spending time on it."
+    },
+    {
+      "slug": "espressif-samples",
+      "org": "Espressif Systems",
+      "kind": "program",
+      "route": "https://www.espressif.com/en/products/devkits",
+      "audience": "maintainer",
+      "fit": "medium",
+      "verified": "2026-11-15",
+      "hook": "two of my repositories target the ESP32-S3 and have only ever run in CI, never on your silicon",
+      "notes": "Dev boards, not a laptop. Use the Get Samples route linked from the devkits page, and keep the ask to boards."
+    },
+    {
+      "slug": "nlnet",
+      "org": "NLnet Foundation (NGI Zero)",
+      "kind": "program",
+      "route": "https://nlnet.nl/propose/",
+      "audience": "maintainer",
+      "fit": "medium",
+      "verified": "2026-11-15",
+      "hook": "the ESP32-S3 port is unglamorous infrastructure work, which is the category the fund exists for",
+      "notes": "A grant application, not a hardware ask. Slower, but it pays for hardware."
+    },
+    {
+      "slug": "github-sponsors",
+      "org": "GitHub Sponsors",
+      "kind": "program",
+      "route": "https://github.com/sponsors",
+      "audience": "community",
+      "fit": "high",
+      "verified": "2026-11-15",
+      "hook": "the profile already exists, so a sponsors tier turns the page into something anyone can act on without emailing a stranger",
+      "notes": "Do this first. It makes every other ask land on a link that works."
+    },
+    {
+      "slug": "free-geek",
+      "org": "Free Geek",
+      "kind": "email",
+      "route": "info@freegeek.org",
+      "audience": "individual",
+      "fit": "low",
+      "verified": "2026-11-15",
+      "hook": "your adoption programme puts refurbished machines into individual hands rather than reselling them",
+      "notes": "Portland-local. If you are not in the region, delete this entry rather than sending it — this is what fit=low means, and render.py skips it by default."
+    }
+  ]
+}
