@@ -11,7 +11,7 @@ display_name  = "pdev-labs"
 # ---- FILL THIS IN -------------------------------------------------
 # Leave as-is and build.py will refuse to generate a public page
 # with a placeholder address in it.
-email         = "pdevlabs@gmail.com"
+email         = "pdev.labs@gmail.com"
 # Optional. Leave "" to omit the line entirely.
 location      = ""
 # -------------------------------------------------------------------
@@ -43,8 +43,8 @@ what_i_do  = "I am 16. Solo maintainer: I write Linux-on-Android tooling, Rust c
 
 [outreach]
 from_name   = "pdev-labs"
-from_email  = "pdevlabs@gmail.com"   # normally identical to identity.email
-reply_to    = "pdevlabs@gmail.com"
+from_email  = "pdev.labs@gmail.com"   # normally identical to identity.email
+reply_to    = "pdev.labs@gmail.com"
 daily_cap   = 5                 # hard ceiling, enforced by send.py
 min_gap_min = 20                # minutes between two sends, enforced
 smtp_host   = "smtp.gmail.com"

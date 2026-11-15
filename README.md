@@ -4,7 +4,7 @@ My only machine, a **Dell Latitude E5440** from **2014**, died. This repo is the
 
 **Page:** https://pdev-labs.github.io/hardware-appeal/
 **Profile:** https://github.com/pdev-labs
-**Contact:** pdevlabs@gmail.com
+**Contact:** pdev.labs@gmail.com
 
 ---
 
